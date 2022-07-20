@@ -1,0 +1,12 @@
+<div class="KanbanController__wrapper full-screen hidden-overflow">
+    <KanbanBoard
+            :key="item.title"
+            :data="item"
+            v-for="item in boards"
+    />
+    <KanbanAddForm
+            v-if="addFormVisible"
+            @addTask="addTask"
+            @close="closeCard"
+    />
+</div>
