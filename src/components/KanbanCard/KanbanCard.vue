@@ -1,10 +1,13 @@
 <template src="./template.html">
-    
+
 </template>
 
 <script>
     export default {
-        name: "KanbanCard"
+        name: "KanbanCard",
+        props: ['color', 'data', 'elementIndex',
+            'last', 'first'],
+
     }
 </script>
 

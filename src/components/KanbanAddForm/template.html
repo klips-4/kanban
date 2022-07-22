@@ -1,0 +1,6 @@
+<div class="KanbanAddForm__wrapper radius-border shadow">
+    <i class="fa fa-times" @click="closeForm"></i>
+    <input type="text" v-model="task.title">
+    <input type="date" v-model="task.deadline">
+    <button @click="addTask">Сохранить</button>
+</div>

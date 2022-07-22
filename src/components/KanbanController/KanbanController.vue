@@ -17,24 +17,28 @@
                 boards: [
                     {
                         title: 'В ожидании',
-                        background: '#eee',
+                        background: '#e76060',
+                        cardBackground: '#eee',
                         tasks: []
                     },
 
                     {
                         title: 'В работе',
-                        background: '#eee',
+                        background: '#3ecbaf',
+                        cardBackground: '#eee',
                         tasks: []
                     },
 
                     {
                         title: 'Тестирование',
-                        background: '#eee',
+                        background: '#8ad965',
+                        cardBackground: '#eee',
                         tasks: []
                     },
                     {
                         title: 'Выполненные',
-                        background: '#eee',
+                        background: '#efb94d',
+                        cardBackground: '#eee',
                         tasks: []
                     },
                 ],
@@ -47,7 +51,11 @@
             },
 
             closeCard() {
-                this.addFormVisible = false
+                this.addFormVisible = false;
+            },
+
+            addButtonClick() {
+                this.addFormVisible = true;
             }
         }
     }
