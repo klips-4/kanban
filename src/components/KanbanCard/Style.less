@@ -1,0 +1,29 @@
+.KanbanCard {
+  &__wrapper {
+    display: grid;
+    width: 200px;
+    height: 150px;
+  }
+  &__header {
+    border-bottom: 1px solid black;
+    padding: 4px;
+    display: grid;
+    grid-template-columns: 16px auto 16px;
+
+    &-left {
+      grid-column-start: 1;
+    }
+
+    &-center {
+      grid-column-start: 2;
+
+    }
+
+    &-right{
+      grid-column-start: 3;
+    }
+  }
+  &-data {
+    justify-content: center;
+  }
+}

@@ -1,6 +1,24 @@
-<div class="KanbanAddForm__wrapper radius-border shadow">
-    <i class="fa fa-times" @click="closeForm"></i>
-    <input type="text" v-model="task.title">
-    <input type="date" v-model="task.deadline">
-    <button @click="addTask">Сохранить</button>
+<div class="KanbanAddForm__wrapper full-screen shadow flex flex-center">
+    <div class="KanbanAddForm-input__wrapper radius-border flex flex-center">
+        <div class="KanbanAddForm__content-header flex flex-item-center flex-justify-end">
+            <i class="fa fa-times" @click="closeForm"></i>
+        </div>
+
+        <input
+                class="KanbanAddForm-text__wrapper"
+                type="text"
+                v-model="task.title"
+                placeholder="Введите задачу">
+        <input
+                class="KanbanAddForm-data__wrapper"
+                type="date"
+                v-model="task.deadline">
+        <button
+                class="KanbanAddForm-saveBTN__wrapper"
+                @click="addTask"
+                :disabled="!(task.title && task.deadline)"
+        >Сохранить
+        </button>
+
+    </div>
 </div>
