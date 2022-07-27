@@ -5,6 +5,7 @@
 <script>
     export default {
         name: "KanbanAddForm",
+        props: ['indexTask'],
         beforeMount() {
             this.task = {...this.defaultTask}
         },
@@ -24,8 +25,8 @@
                 this.$emit('close');
             },
             addTask(){
-                this.$emit('addTask', {...this.task});
-                this.task = null;
+                this.$emit('addTask', {id:this.indexTask, ...this.task});
+                this.closeForm()
             }
         }
     }

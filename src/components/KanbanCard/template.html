@@ -1,18 +1,13 @@
-<div class="KanbanCard__wrapper" :style="{'background': color}">
-    {{data.title}}
-
+<div class="KanbanCard__wrapper radius-border full-size" :style="{'background':color}">
     <div class="KanbanCard__header full-width">
-
-        <i class="fa fa-trash KanbanCard__header-center" v-if="first"></i>
-
-        <i class="fa fa-arrow-left KanbanCard__header-left" v-if="!first"></i>
-
-        <i class="fa fa-arrow-right KanbanCard__header-right" v-if="!last"></i>
-
-        <div class="KanbanCard__content">
-            {{data.deadline}}
-        </div>
-
+        <i class = "fa fa-trash KanbanCard__header-center"
+           @click="notifyHandler('deleteTask')" v-if="first"></i>
+        <i class = "fa fa-arrow-left KanbanCard__header-left"
+           @click="notifyHandler('movePrevBoard')" v-if="!first"></i>
+        <i class = "fa fa-arrow-right KanbanCard__header-right"
+           @click="notifyHandler('moveRightBoard')" v-if="!last"></i>
     </div>
+    <div class="KanbanCard__content ">{{data.title}}</div>
+    <div class="KanbanCard__date">{{data.deadline}}</div>
 
 </div>

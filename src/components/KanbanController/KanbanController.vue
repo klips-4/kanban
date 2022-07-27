@@ -42,12 +42,15 @@
                         tasks: []
                     },
                 ],
-                addFormVisible: false
+                addFormVisible: false,
+                indexTask: 0
+
             }
         },
         methods: {
             addTask(taskData) {
-              this.boards[0].tasks.push(taskData)
+                this.indexTask++;
+                this.boards[0].tasks.push(taskData)
             },
 
             closeCard() {
@@ -56,6 +59,25 @@
 
             addButtonClick() {
                 this.addFormVisible = true;
+            },
+            deleteTask(taskId, boardId) {
+                const tasks = this.boards[boardId].tasks;
+                const newTasks = [];
+
+                tasks.forEach((item) => {
+                  if(item.id !==taskId) {
+                      newTasks.push(item);
+                  }
+                });
+
+                this.boards[boardId].tasks = newTasks;
+            },
+            moveNextBoard() {
+
+            },
+
+            movePrevBoard() {
+
             }
         }
     }

@@ -17,7 +17,9 @@
             :first="firstBoard"
             :color="data.cardBackground"
             v-for="(item,index) in data.tasks"
-
+            @deleteTask = "notifyHandler('deleteTask', $event)"
+            @moveNextBoard="notifyHandler('moveNextBoard', $event)"
+            @movePrevBoard="notifyHandler('movePrevBoard', $event)"
     />
     <span v-if="!data.tasks.length">Нет задач</span>
 </div>
